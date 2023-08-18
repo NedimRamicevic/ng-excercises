@@ -1,0 +1,7 @@
+<div>
+  <p *ngIf="isHidden">Başarılı</p>
+  <p>{{ kelam }}</p>
+  <button (click)="toggle()">toggle</button>
+  <app-title [title]="selam"></app-title>
+  <input type="text" [(ngModel)]="selam" (ngModelChange)="onChange($event)" />
+</div>
