@@ -12,12 +12,21 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { TitleComponent } from './components/title/title.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
-    TitleComponent
+    TitleComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +40,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
 
   ],
+
+  
   providers: [],
   bootstrap: [AppComponent]
 })
