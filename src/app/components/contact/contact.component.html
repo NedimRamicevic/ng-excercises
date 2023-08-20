@@ -1,1 +1,5 @@
-<p>contact works!</p>
+<div>
+  <div *ngFor="let contact of contactList">
+    <a [routerLink]="[contact.id]">{{ contact.name }} </a>
+  </div>
+</div>

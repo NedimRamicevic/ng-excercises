@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ContactDetailComponent } from './components/contact-detail/contact-detail.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    NavbarComponent
+    NavbarComponent,
+    ContactDetailComponent
   ],
   imports: [
     BrowserModule,

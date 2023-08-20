@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ContactDetailComponent } from './components/contact-detail/contact-detail.component';
+import { myGuardGuard } from './my-guard.guard';
 
 const routes: Routes = [
+  {path:"", redirectTo:"/home", pathMatch:"full"},
   { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'about', component: AboutComponent, canActivate: [myGuardGuard] },
+  { path: 'contact', component: ContactComponent },
+  {path:'contact/:id', component:ContactDetailComponent},
+  
 ];
 
 @NgModule({
