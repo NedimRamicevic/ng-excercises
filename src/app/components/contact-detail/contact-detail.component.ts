@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import contacts from 'src/app/contacts.json'
+import { ContactsService } from 'src/app/services/contacts.service';
 
 interface Contacts {
   id: Number;
@@ -16,14 +16,22 @@ interface Contacts {
 })
 export class ContactDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) {
+  contact : Contacts = {
+    id: 0,
+    name: '',
+    email: '',
+    phone: ''
+  };
+
+  constructor(private route: ActivatedRoute, private contactsService: ContactsService) {
   }
-    contact : any
+   
+
 
   ngOnInit(){
-     let id = this.route.snapshot.params['id'];
-     let contactList: Contacts[] = contacts
-     this.contact = contactList.find(contact => contact.id == id);
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.contact = this.contactsService.getContact(id);
+     
   }
 
 }
