@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import contacts from 'src/app/contacts.json'
+import { Component, OnInit } from '@angular/core';
+import { ContactsService } from 'src/app/services/contacts.service';
 
 interface Contacts {
   id: Number;
@@ -12,6 +12,12 @@ interface Contacts {
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent {
-  contactList: Contacts[] = contacts
+export class ContactComponent implements OnInit {
+    
+    contactList: Contacts[] = [];
+    constructor(private contactsService: ContactsService) { }
+  
+    ngOnInit(): void {
+      this.contactList = this.contactsService.getContacts();
+    }
 }
